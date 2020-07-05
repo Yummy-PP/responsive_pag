@@ -1,0 +1,184 @@
+/*=========================================
+ESTILOS GLOBALES
+===========================================*/
+
+*{
+    /*quitamos margenes externas que vienen por defecto*/
+    margin: 0px;
+    /*quitamos margenes internas que vienen por defecto*/
+    padding: 0px;
+    /*quitamos el estilo de lista que viene por defecto */
+    list-style: none;
+    /*quitamos la decoración del texto que viene por defecto*/
+    text-decoration: none;
+    /*asignamos una fuente global (toda la página)*/
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*box-sizing=>tamaño de caja*/
+    /*esto asegura que el relleno y el borde estan incluidos en el ancho y altura total de los elementos*/
+    box-sizing: border-box;
+}
+
+/*creamos una clase*/
+.contenedor{
+    /*posición relativa*/
+    position: relative;
+    /*margen automatica (para que se pueda centrar)*/
+    margin: auto;
+    /*ancho*/
+    width: 100%;
+    /*alto*/
+    height: auto;
+}
+.fila{
+    position: relative;
+    /*margen interna*/
+    margin: auto;
+    /*ancho*/
+    width: 100%;
+    /*alto*/
+    height: auto; 
+    /*Las columnas dentro de una fila están flotando a la izquierda, y por lo tanto se toman fuera del flujo de la pagina y otros elementos
+    seran colocados como si no fueran de las columnas. Para evitar eso añadimos un estilo que despeje el flujo*/
+    /*NOTA: clear: both (esta propiedad hace que se respete solo los elementos flotantes que esten dentro de esa fila. Hace una limpieza 
+    y deja solo a las clases flotantes correspondientes a esa fila. el espacio que no se lleno se respeta en cada fila*/
+    clear: both;
+    /**/
+    /*NOTA:propiedad de visualización display: table(esto permitira que se respete el área que esta generando las cajas flotantes*/
+    display: table;
+}
+/*con esta seleccion podemos decir que todas las clases que inicien con la palabra col-  tendran las siguientes 
+propiedades: ya que las comparten
+*/
+[class*="col-"]{
+    /*flotar la caja de izquierda a derecha*/
+    float: left;
+    /*borde(grosor)-tipo-color*/
+    border: 2px solid black;
+    /*margen interna*/
+    padding: 20px;
+} 
+/*NOTA: El total de las columnas es 12, para saber el tamaño de las 
+otras 11 debemos hacer una regla de 3: nc*100/12*/
+
+/*creamos 2 cajas que ocupen 6 columnas 50/50---las cajas no apareceran una al lado de la otra
+1ro tenemos que ponerlas a flotar con la propiedad float en el codigo css. Si no aparece pese a eso, es porque el borde esta empujando la caja al segundo 
+renglon, porque sin bordes la suma si es 100%. Si agregamos el borde este suma en el % del ancho de la caja. Para evitar 
+que sume en el estilo global se pone una propiedad css: box-sizing: border-box = esto asegura que el relleno y el borde estan incluidos en el ancho y altura total de los elementos*/
+/*creamos clase (para cuando una caja html necesite utilizar las 12 columnas)*/
+/*cajas que ocupan 6 columnas*/
+.col-12{
+    /*flotar la caja de izquierda a derecha*/
+    /*float: left;*/
+    /*ancho*/
+    width: 100%;
+    /*color caja*/
+    /*background: aqua;*/
+    /*borde(grosor)-tipo-color*/
+    /*border: 4px solid black;*/
+    /*margen interna*/
+    /*padding: 20px;*/
+}
+/*cajas que ocupen 9 columnas*/
+.col-9{
+    /*flotantes de izquierda a derecha*/
+    /*float: left;*/
+    /*ancho*/
+    width: 75%;
+    /*borde(grosor)-tipo-color
+    border: 2px solid black;*/
+    /*margen interna
+    padding: 20px;*/
+    
+}
+/*cajas que ocupen 8 columnas*/
+.col-8{
+    /*flotantes de izquierda a derecha*/
+    /*float: left;*/
+    /*ancho*/
+    width: 66.66666667%;
+    /*borde(grosor)-tipo-color
+    border: 2px solid black;*/
+    /*margen interna
+    padding: 20px;*/   
+}
+/*cajas que ocupen 7 columnas*/
+.col-7{
+    /*flotantes de izquierda a derecha*/
+    /*float: left;*/
+    /*ancho|| es recomendable usar 8 decimales*/
+    width: 58.33333333%;
+    /*borde(grosor)-tipo-color
+    border: 2px solid black;*/
+    /*margen interna
+    padding: 20px;*/   
+}
+/*cajas que ocupan 6 columnas*/
+.col-6{
+    /*flotar la caja de 6 columnas de izquierda a derecha
+    float: left;*/
+    /*ancho*/
+    width: 50%;
+    /*color caja*/
+    /*background: rgb(0, 60, 255);*/
+    /*borde(grosor)-tipo-color
+    border: 2px solid black;*/
+    /*margen interna
+    padding: 20px;*/
+}
+/*cajas que ocupen 5 columnas*/
+.col-5{
+    /*flotantes de izquierda a derecha*/
+    /*float: left;*/
+    /*ancho*/
+    width: 41.66666667%;
+    /*borde(grosor)-tipo-color
+    border: 2px solid black;*/
+    /*margen interna
+    padding: 20px;*/   
+}
+/*cajas que ocupen 4 columnas*/
+/*para saber el ancho de cada caja se utiliza la regla de 3 
+si 12=100% cuanto es 4 (multiplicamos 4*100/12) */
+.col-4{
+    /*colocamos todas las cajas de las 4 columnas flotantes de izquierda a derecha*/
+    /*float: left;*/
+    /*ancho|| es recomendable usar 8 decimales*/
+    width: 33.33333333%;
+    /*borde(grosor)-tipo-color
+    border: 2px solid black;*/
+    /*margen interna
+    padding: 20px;*/
+    
+}
+/*cajas que ocupen 3 columnas*/
+.col-3{
+    /*flotante de izquierda a derecha*/
+    /*float: left;*/
+    /*ancho*/
+    width: 25%;
+    /*borde(grosor)-tipo-color
+    border: 2px solid black;*/
+    /*margen interna
+    padding: 20px;*/    
+}
+.col-2{
+    /*colocamos todas las cajas de 2 columnas flotantes de izquierda a derecha*/
+    /*float: left;*/
+    /*ancho|| es recomendable usar 8 decimales*/
+    width: 16.66666667%;
+    /*borde(grosor)-tipo-color
+    border: 2px solid black;*/
+    /*margen interna
+    padding: 20px;*/   
+}
+.col-1{
+    /*colocamos todas las cajas de 1 columna flotantes de izquierda a derecha*/
+    /*float: left;*/
+    /*ancho|| es recomendable usar 8 decimales*/
+    width: 8.33333333%;
+    /*borde(grosor)-tipo-color
+    border: 2px solid black;*/
+    /*margen interna
+    padding: 20px;*/   
+}
+
